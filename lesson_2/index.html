@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datetime superapp</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="./src/howler.min.js"></script>
+    <script src="./src/main.js" type="module"></script>
+</head>
+
+<body>
+    <form id="datecalc">
+        <h3>Калькулятор дат</h3>
+        <label>
+            <strong>Первая дата:</strong>
+            <input type="date" name="firstDate" />
+        </label>
+        <label>
+            <strong>Вторая дата:</strong>
+            <input type="date" name="secondDate" />
+        </label>
+        <button type="submit">Расчитать промежуток</button>
+        <p id="datecalc__result"></p>
+        <div id="app">
+            <p>Установите время таймера в секундах</p>
+            <div class="input_timer_wrapper">
+                <input v-model="seconds" type="number" placeholder="0">
+            </div>
+            <p>Таймер: {{ seconds }}</p>
+            <button @click="startTimer()">Старт</button>
+            <button @click="stopTimer()">Стоп</button>
+        </div>
+    </form>
+</body>
+
+</html>
